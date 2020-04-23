@@ -20,7 +20,7 @@ func (b *Bounds) String() string {
 
 // SQL returns the SQL fragment to create this bounds in the database
 func (b *Bounds) SQL() string {
-	return fmt.Sprintf("ST_MakeEnvelope(%g, %g, %g, %g, 3857)",
+	return fmt.Sprintf("ST_MakeEnvelope(%g, %g, %g, %g, 3395)",
 		b.Xmin, b.Ymin,
 		b.Xmax, b.Ymax)
 }

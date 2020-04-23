@@ -386,7 +386,7 @@ func (lyr *LayerTable) requestSql(tile *Tile, qp *queryParameters) (string, erro
 	tmplSql := `
 	SELECT ST_AsMVT(mvtgeom, {{ .MvtParams }}) FROM (
 		SELECT ST_AsMVTGeom(
-			ST_Transform(t."{{ .GeometryColumn }}", 3857),
+			ST_Transform(t."{{ .GeometryColumn }}", 3395),
 			bounds.geom_clip,
 			{{ .Resolution }},
 			{{ .Buffer }}

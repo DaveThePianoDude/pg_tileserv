@@ -54,7 +54,7 @@ AS $$
   -- Convert the clipped polygons and a selection of
   -- columns into the final MVT format for return.
   mvtgeom AS (
-    SELECT ST_AsMVTGeom(ST_Transform(j.vgeom, 3857), bounds.geom) AS geom,
+    SELECT ST_AsMVTGeom(ST_Transform(j.vgeom, 3395), bounds.geom) AS geom,
       j.status, j.color, j.code, j.subsystem, j.oocdate, j.oocnotes,
       j.street_numb, j.street
     FROM joined j, bounds

@@ -62,7 +62,7 @@ func (tile *Tile) Bounds() Bounds {
 	worldMercMax := worldMercWidth / 2
 	worldMercMin := -1 * worldMercMax
 
-	// Tile width in EPSG:3857
+	// Tile width in EPSG:3395
 	tileMercSize := tile.Width()
 
 	// Calculate geographic bounds from tile coordinates
