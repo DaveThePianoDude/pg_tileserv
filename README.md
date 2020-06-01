@@ -645,6 +645,17 @@ PARALLEL SAFE;
 COMMENT ON FUNCTION public.hexagons IS 'Hex coverage dynamically generated. Step parameter determines how approximately many hexes (2^step) to generate per tile.';
 ```
 
+# Using Alternative Projections
+
+This version of pg_tilserv began as a hack that lets you project your points using EPSG 3395 tilespace mapping.  This hack was accomplished by simply replacing every occurrence of the number 3857 in the Go code or SQL with the number 3395.
+
+The following files were changed:
+
+* tile.go
+* bounds.go
+* layer_table.go
+* examples/ope* nlayers/openlayers-function-click.sq* l
+
 # Security
 
 The basic principle of security is to connect your tile server to the database with a user that has just the access you want it to have, and no more. To support different access patterns, create different users with access to different tables/functions, and run multiple services, connecting with those different users.
@@ -680,4 +691,3 @@ REVOKE EXECUTE ON FUNCTION myschema.myfunction FROM public;
 -- Just to be sure, also revoke execute from the user
 REVOKE EXECUTE ON FUNCTION myschema.myfunction FROM tileserver;
 ```
-
