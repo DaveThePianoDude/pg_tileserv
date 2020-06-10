@@ -654,7 +654,7 @@ The following files were changed:
 * tile.go
 * bounds.go
 * layer_table.go
-* examples/ope* nlayers/openlayers-function-click.sq* l
+* examples/openlayers/openlayers-function-click.sql
 
 # Security
 
